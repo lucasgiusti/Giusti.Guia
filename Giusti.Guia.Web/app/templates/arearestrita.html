@@ -1,0 +1,26 @@
+﻿<div ng-init="getUsuarios()">
+    <form class="form-horizontal" ng-show="acessoLiberado">
+        <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10">
+                <legend>{{heading}}</legend>
+                <p>{{message}}</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Usuários Cadastrados</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="usuario in usuarios">
+                            <td>{{usuario.nome}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</form>
+</div>

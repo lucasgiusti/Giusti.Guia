@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F6A7A3D1-EA13-41BE-8EEF-C0363175B56A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Giusti.Guia.Data</RootNamespace>
+    <AssemblyName>Giusti.Guia.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\EmailConfiguration.cs" />
+    <Compile Include="Configuration\MotelConfiguration.cs" />
+    <Compile Include="Configuration\MotelQuartoConfiguration.cs" />
+    <Compile Include="Configuration\MotelQuartoImagemConfiguration.cs" />
+    <Compile Include="Configuration\MotelQuartoPeriodoConfiguration.cs" />
+    <Compile Include="Configuration\PerfilUsuarioConfiguration.cs" />
+    <Compile Include="EmailData.cs" />
+    <Compile Include="LogData.cs" />
+    <Compile Include="MotelData.cs" />
+    <Compile Include="PerfilData.cs" />
+    <Compile Include="PerfilFuncionalidadeData.cs" />
+    <Compile Include="Configuration\PerfilFuncionalidadeConfiguration.cs" />
+    <Compile Include="Configuration\FuncionalidadeConfiguration.cs" />
+    <Compile Include="Configuration\LogConfiguration.cs" />
+    <Compile Include="Configuration\PerfilConfiguration.cs" />
+    <Compile Include="Configuration\UsuarioConfiguration.cs" />
+    <Compile Include="EntityContext.cs" />
+    <Compile Include="FuncionalidadeData.cs" />
+    <Compile Include="PerfilUsuarioData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Library\DataBase.cs" />
+    <Compile Include="UsuarioData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Giusti.Guia.Model\Giusti.Guia.Model.csproj">
+      <Project>{1b63ee1c-3d84-4415-aea7-7347412c9197}</Project>
+      <Name>Giusti.Guia.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

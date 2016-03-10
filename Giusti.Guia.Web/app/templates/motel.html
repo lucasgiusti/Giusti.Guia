@@ -1,0 +1,38 @@
+﻿<div ng-init="cookieDestroy();getMoteis()">
+    <form class="form-horizontal">
+        <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10">
+                <div ng-repeat="motel in moteis" ng-show="motel.id == id">
+                    <h4><strong>{{motel.nome}}</strong></h4>
+                    <div class="row row_bottom_20">
+
+                        <div>
+                            &nbsp;
+                            <div class="produto">
+                                <div class="mlogo">
+                                    <span class="premiumMask"></span>
+                                    <img src="../../Content/imagens/{{motel.logo}}" />
+                                </div>
+                                <a href="dadosmotel/{{motel.id}}">
+                                    <h4>{{motel.nome}} <small class="pull-right"><strong>{{retornaNomeRegiaoItem(motel.regiao)}}</strong></small></h4>
+                                </a>
+                                <p>{{motel.endereco}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br/><br />
+                    <div class="row row_bottom_20" ng-repeat="quarto in motel.motelQuartos">
+                        <h4><strong>{{quarto.nome}}</strong></h4>    
+                        <p ng-repeat="periodo in quarto.motelQuartoPeriodos">{{periodo.descricao}}</p>
+                        <div class="col-lg-3 col-md-3 col-sm-6" ng-repeat="imagem in quarto.motelQuartoImagens">
+                            &nbsp;
+                            <div class="produto">
+                                <img ng-src="../../Content/imagens/{{imagem.imagem}}" style="margin:auto; width: 220px">
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </form>
+</div>

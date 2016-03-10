@@ -1,0 +1,41 @@
+﻿<div ng-init="cookieDestroy();getMoteis()">
+    <form class="form-horizontal">
+        <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-10">
+                <div class="well well-sm">
+                    <img src="../../Content/imagens/22102015105206_banner_mega_{{regiao}}.png" style="height: 203px" />
+                </div>
+                </div>
+            </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-1 col-sm-10">
+                        <h4><strong>MOTÉIS INDICADOS {{nomeRegiao}}</strong></h4>
+                        <div class="well well-sm">
+                            <form class="" role="search">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 ">
+                                        <input type="text" class="form-control" placeholder="Buscar por Nome" aria-describedby="sizing-addon2" data-ng-model="searchMotelNome" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="row row_bottom_20">
+
+                            <div class="col-lg-3 col-md-3 col-sm-6" ng-repeat="motel in moteis | filter:{nome: searchMotelNome}" ng-show="regiao == '' || motel.regiao == regiao">
+                                &nbsp;
+                                <div class="produto">
+                                    <div class="mlogo">
+                                        <span class="premiumMask"></span>
+                                        <img src="../../Content/imagens/{{motel.logo}}" />
+                                    </div>
+                                    <a href="dadosmotel/{{motel.id}}">
+                                        <h4>{{motel.nome}} <small class="pull-right"><strong>{{retornaNomeRegiaoItem(motel.regiao)}}</strong></small></h4>
+                                    </a>
+                                    <p>{{motel.endereco}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </form>
+</div>
